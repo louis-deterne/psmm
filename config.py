@@ -14,3 +14,7 @@ SSH_KEY = os.path.expanduser("~/.ssh/id_ed25519")
 
 
 
+
+# Base de données
+DB_HOST = "slm-db"
+DB_NAME = "psmm"
