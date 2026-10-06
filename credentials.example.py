@@ -2,3 +2,5 @@
 SUDO_PASSWORD = "changeme"
 DB_USER = "psmm"
 DB_PASSWORD = "changeme"
+MAIL_USER = "slm.psmm67@gmail.com"
+MAIL_PASSWORD = "itfa gftj scdu lvhl"
