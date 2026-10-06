@@ -6,3 +6,5 @@
 # Job 09 : rapport de la veille chaque matin à 7h (après une dernière collecte)
 55 6 * * * cd /home/monitor/psmm && /usr/bin/python3 ssh_mysql_error.py > /dev/null 2>&1; /usr/bin/python3 ssh_ftp_error.py > /dev/null 2>&1; /usr/bin/python3 ssh_web_error.py > /dev/null 2>&1
 0 7 * * * cd /home/monitor/psmm && /usr/bin/python3 ssh_serveur_mail.py >> logs/mail.log 2>&1
+# Jobs 11-13 : monitoring CPU/RAM/disque + alertes mail toutes les 5 min
+*/5 * * * * cd /home/monitor/psmm && /usr/bin/python3 ssh_system_mail.py >> logs/system.log 2>&1
