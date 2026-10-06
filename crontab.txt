@@ -8,3 +8,5 @@
 0 7 * * * cd /home/monitor/psmm && /usr/bin/python3 ssh_serveur_mail.py >> logs/mail.log 2>&1
 # Jobs 11-13 : monitoring CPU/RAM/disque + alertes mail toutes les 5 min
 */5 * * * * cd /home/monitor/psmm && /usr/bin/python3 ssh_system_mail.py >> logs/system.log 2>&1
+# Job 15 : rapport dans le Space Google Chat à 9h, 13h et 17h
+2 9,13,17 * * * cd /home/monitor/psmm && /usr/bin/python3 ssh_chat.py >> logs/chat.log 2>&1
