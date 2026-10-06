@@ -7,7 +7,7 @@ import paramiko
 from config import SERVERS, SSH_USER, SSH_KEY
 
 
-def ssh_exec(host, command, input_data=None):
+def ssh_exec(host, command, input_data=None, timeout=30):
     """Exécute `command` sur `host` en SSH. R-> (code_retour, stdout, stderr).
 
     input_data : texte optionnel envoyé sur l'entrée standard de la commande
@@ -19,7 +19,7 @@ def ssh_exec(host, command, input_data=None):
     client.connect(hostname=host, username=SSH_USER,
                    key_filename=SSH_KEY, timeout=10)
     try:
-        stdin, stdout, stderr = client.exec_command(command, timeout=30)
+        stdin, stdout, stderr = client.exec_command(command, timeout=timeout)
         if input_data is not None:
             stdin.write(input_data + "\n")
             stdin.flush()

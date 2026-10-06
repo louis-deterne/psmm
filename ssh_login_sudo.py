@@ -12,7 +12,7 @@ from credentials import SUDO_PASSWORD
 from ssh_login import ssh_exec
 
 
-def ssh_sudo(host, command):
+def ssh_sudo(host, command, timeout=30):
     """Exec `command` en root sur `host` via sudo. R-> (code, stdout, stderr).
 
     sudo -S   : lit le mdp sur l'entry standard (envoyé par ssh_exec)
@@ -20,7 +20,7 @@ def ssh_sudo(host, command):
     sh -c     : permet d'utiliser des pipes (|) ou redirect dans la commande
     """
     sudo_cmd = f"sudo -S -p '' sh -c {shlex.quote(command)}"
-    return ssh_exec(host, sudo_cmd, input_data=SUDO_PASSWORD)
+    return ssh_exec(host, sudo_cmd, input_data=SUDO_PASSWORD, timeout=timeout)
 
 
 def main():

@@ -23,3 +23,6 @@ DB_NAME = "psmm"
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 MAIL_TO = "louis.deterne@laplateforme.io"
+
+# ALCASAR (portail captif de l'école) - à activer et compléter sur place
+ALCASAR_ENABLED = False
